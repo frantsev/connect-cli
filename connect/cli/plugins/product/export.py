@@ -239,7 +239,7 @@ def _fill_param_row(ws, row_idx, param):
         wrap_text=True,
     )
     ws.cell(
-        row_idx, 13, value=param['events']['created']['at'],
+        row_idx, 13, value=param['events'].get('created', {}).get('at'),
     ).alignment = Alignment(
         horizontal='left',
         vertical='top',
@@ -292,7 +292,8 @@ def _fill_template_row(ws, row_idx, template):
     ws.cell(row_idx, 6, value=template['body']).alignment = Alignment(
         wrap_text=True,
     )
-    ws.cell(row_idx, 7, value=template['events']['created']['at']).alignment = Alignment(
+    ws.cell(row_idx, 7, value=template['events'].get('created', {}).get('at'),
+    ).alignment = Alignment(
         horizontal='left',
         vertical='top',
     )
@@ -312,7 +313,7 @@ def _fill_action_row(ws, row_idx, action):
     ws.cell(row_idx, 5, value=action['title'])
     ws.cell(row_idx, 6, value=action['description'])
     ws.cell(row_idx, 7, value=action['scope'])
-    ws.cell(row_idx, 8, value=action['events']['created']['at'])
+    ws.cell(row_idx, 8, value=action['events'].get('created', {}).get('at'))
     ws.cell(row_idx, 9, value=action['events'].get('updated', {}).get('at'))
 
 
@@ -351,7 +352,7 @@ def _fill_item_row(ws, row_idx, item):
     ws.cell(row_idx, 9, value=period)
     ws.cell(row_idx, 10, value=_calculate_commitment(item))
     ws.cell(row_idx, 11, value=item['status'])
-    ws.cell(row_idx, 12, value=item['events']['created']['at'])
+    ws.cell(row_idx, 12, value=item['events'].get('created', {}).get('at'))
     ws.cell(row_idx, 13, value=item['events'].get('updated', {}).get('at'))
 
 
