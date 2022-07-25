@@ -5,7 +5,7 @@
 
 Install MSYS2 using the [MSYS2 installer](http://www.msys2.org/) for your system architecture.
 
-Follow the instructions on the [MSYS2 website](https://github.com/msys2/msys2/wiki/MSYS2-installation) to update your MSYS2 shell.
+Follow the instructions on the [MSYS2 website](https://www.msys2.org/wiki/MSYS2-installation/) to update your MSYS2 shell.
 
 
 Install GTK3+ and `git` for 32 bit architecture:
